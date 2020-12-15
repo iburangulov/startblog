@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('/','AdminController@index');
+    Route::resource('posts', 'PostsController');
+});
+
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', 'UserController@login');
     Route::post('/login', 'UserController@login_');
