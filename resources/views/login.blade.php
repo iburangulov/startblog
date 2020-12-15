@@ -9,6 +9,7 @@
 </head>
 <body>
 @include('header')
+
 <form action="{{ url('/login') }}" method="post">
     @csrf
     <input type="email" name="email" placeholder="Email"><br>

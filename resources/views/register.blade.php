@@ -9,7 +9,14 @@
 </head>
 <body>
 @include('header')
-<form action="{{ url('/regiser') }}" method="post">
+@if($errors->any())
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
+<form action="{{ url('/register') }}" method="post">
     @csrf
     <input type="text" name="name" placeholder="Name"><br>
     <input type="email" name="email" placeholder="Email"><br>
