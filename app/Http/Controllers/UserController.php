@@ -26,6 +26,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ])) {
+
             return redirect(route('home'));
         }
 

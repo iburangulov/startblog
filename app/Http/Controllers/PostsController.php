@@ -55,7 +55,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        return '';
+        $post = Post::find($id);
+        return view('admin.posts.show', ['post' => $post]);
     }
 
     /**
@@ -80,6 +81,13 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
+        $post->update([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'content' => $request->content,
+        ]);
+
+        return redirect(route('posts.show', $id));
     }
 
     /**
@@ -90,7 +98,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        return __METHOD__;
+        Post::find($id)->delete();
+        return redirect(route('posts.index'));
     }
 
 }

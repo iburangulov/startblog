@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit {{ $id }}</title>
-</head>
-<body>
-@include('admin.header')
+@section('title')
+    Edit post
+@endsection
+@include('admin.templates.header')
+@include('admin.templates.navbar')
 
 <form action="{{ route('posts.update', ['post' => $id]) }}" method="post">
     @csrf
@@ -19,5 +13,4 @@
     <input type="submit">
 </form>
 
-</body>
-</html>
+@include('admin.templates.footer')
