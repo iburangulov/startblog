@@ -21,7 +21,8 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', 'UserController@register');
     Route::post('/register', 'UserController@register_');
 });
-Route::get('/logout', ['middleware' => 'auth', 'UserController@logout']);
+
+Route::get('/logout', 'UserController@logout');
 
 Route::group(['prefix' => 'admin'], function () {
 
