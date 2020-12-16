@@ -17,6 +17,11 @@ class UserController extends Controller
 
     public function login_(Request $request)
     {
+        $request->validate([
+            'email' => 'required|max:32|min:6|email',
+            'password' => 'required|max:32|min:6|alpha_dash'
+        ]);
+
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,
