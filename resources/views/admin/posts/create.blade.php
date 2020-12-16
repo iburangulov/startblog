@@ -13,7 +13,7 @@
     @csrf
     <input type="text" name="title" placeholder="Title"><br>
     <input type="text" name="subtitle" placeholder="Subitle"><br>
-    <textarea name="content" cols="30" rows="10" placeholder="Content"></textarea><br>
+    <input type="text" name="content" placeholder="Content"><br>
     <input type="submit">
 </form>
 </body>

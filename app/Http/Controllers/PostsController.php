@@ -66,7 +66,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return __METHOD__;
+        $post = Post::find($id);
+        return view('admin.posts.edit', ['id' => $id, 'post' => $post]);
     }
 
     /**
@@ -78,7 +79,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return __METHOD__;
+        $post = Post::find($id);
     }
 
     /**

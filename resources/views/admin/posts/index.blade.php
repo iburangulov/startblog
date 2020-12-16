@@ -15,6 +15,7 @@
     <p>{{ $post['id'] }}</p>
     <p>{{ $post['title'] }}</p>
     <p>{{ $post['subtitle'] }}</p>
+        <a href="{{ route('posts.edit', ['post' => $post['id']]) }}">Edit</a>
     </div>
 @endforeach
 
